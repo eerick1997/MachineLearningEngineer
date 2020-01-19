@@ -1,0 +1,34 @@
+%%%%%%%%%%% MATRIX MACROS %%%%%%%%%%%%%%
+\newcommand\topstrut[1][1.2ex]{\setlength\bigstrutjot{#1}{\bigstrut[t]}}
+\newcommand\botstrut[1][0.9ex]{\setlength\bigstrutjot{#1}{\bigstrut[b]}}
+
+\DeclareDocumentEnvironment{bheadmatrix}{O{}O{*{10}{c}}}{%
+\begin{blockarray}{#2}
+#1 \\[-0.8ex]
+\begin{block}{[#2]}
+\topstrut}%
+{%
+\botstrut\\
+\end{block}
+\end{blockarray}
+}%
+
+\newcommand{\image}[4]{
+    \begin{center}
+        \begin{figure}[H]
+            \includegraphics{width=#1\textwidth}{#2}
+            \caption{#3}
+            \label{#4}
+        \end{figure}
+    \end{center}
+}
+
+\newcommand{\diagramtikz}[3]{
+    \begin{figure}[H]
+        \begin{center}
+            #1
+        \end{center}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
+}
